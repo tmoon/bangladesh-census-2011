@@ -7,13 +7,16 @@ verify_ssl = true
 
 [packages]
 beautifulsoup4 = "==4.9.0"
+camelot-py = "==0.7.3"
 joblib = "==0.14.1"
 networkx = "==2.4"
 numba = "==0.48.0"
 numpy = "==1.18.1"
+opencv-python = "==4.2.0.34"
 pandas = "==1.0.1"
 py = "==1.8.1"
 pyparsing = "==2.4.6"
+PyPDF2 = "==1.26.0"
 pytz = "==2019.3"
 requests = "==2.22.0"
 scikit-learn = "==0.22.1"

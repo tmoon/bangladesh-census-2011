@@ -19,7 +19,7 @@ def download_file(final_url):
     t = time.time()
     path_name = PDF_SAVE_DIR + "/" + final_url.split("/")[-1]
     if path.exists(path_name) and cache:
-        print("DONE")
+        print("FROM CACHE " + path_name)
     else:
         pdfFile = requests.get(final_url, allow_redirects=True)
         with open(path_name, 'wb') as f:

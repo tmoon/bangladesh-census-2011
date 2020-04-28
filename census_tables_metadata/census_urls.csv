@@ -1,4 +1,8 @@
 census_id,division,district,file_name,url
+Census2011,Barisal,Barisal,Barisal_C01.pdf,http://203.112.218.65:8008/Census2011/Barisal/Barisal/Barisal_C01.pdf
+Census2011,Barisal,Barisal,Barisal_C02.pdf,http://203.112.218.65:8008/Census2011/Barisal/Barisal/Barisal_C02.pdf
+Census2011,Barisal,Barisal,Barisal_C03.pdf,http://203.112.218.65:8008/Census2011/Barisal/Barisal/Barisal_C03.pdf
+Census2011,Barisal,Barisal,Barisal_C04.pdf,http://203.112.218.65:8008/Census2011/Barisal/Barisal/Barisal_C08.pdf
 Census2011,Barisal,Barisal,Barisal_C05.pdf,http://203.112.218.65:8008/Census2011/Barisal/Barisal/Barisal_C05.pdf
 Census2011,Barisal,Barisal,Barisal_C06.pdf,http://203.112.218.65:8008/Census2011/Barisal/Barisal/Barisal_C06.pdf
 Census2011,Barisal,Barisal,Barisal_C07.pdf,http://203.112.218.65:8008/Census2011/Barisal/Barisal/Barisal_C07.pdf
@@ -100,6 +104,21 @@ Census2011,Chittagong,Chittagong,Chittagong_C12.pdf,http://203.112.218.65:8008/C
 Census2011,Chittagong,Chittagong,Chittagong_C13.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Chittagong/Chittagong_C13.pdf
 Census2011,Chittagong,Chittagong,Chittagong_C14.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Chittagong/Chittagong_C14.pdf
 Census2011,Chittagong,Chittagong,Chittagong_C15.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Chittagong/Chittagong_C15.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C01.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C01.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C02.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C02.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C03.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C03.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C04.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C04.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C05.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C05.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C06.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C06.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C07.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C07.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C08.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C08.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C09.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C09.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C10.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C10.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C11.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C11.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C12.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C12.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C13.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C13.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C14.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C14.pdf
+Census2011,Chittagong,Bandarban,Bandarban_C15.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Bandarban/Bandarban_C15.pdf
 Census2011,Chittagong,Cox's Bazar,Cox's Bazar_C01.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Cox's Bazar/Cox's Bazar_C01.pdf
 Census2011,Chittagong,Cox's Bazar,Cox's Bazar_C02.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Cox's Bazar/Cox's Bazar_C02.pdf
 Census2011,Chittagong,Cox's Bazar,Cox's Bazar_C03.pdf,http://203.112.218.65:8008/Census2011/Chittagong/Cox's Bazar/Cox's Bazar_C03.pdf
@@ -660,6 +679,16 @@ Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C02.pdf,http://203.112.218.
 Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C03.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C03.pdf
 Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C04.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C04.pdf
 Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C05.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C05.pdf
+Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C06.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C06.pdf
+Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C07.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C07.pdf
+Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C08.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C08.pdf
+Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C09.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C09.pdf
+Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C10.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C10.pdf
+Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C11.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C11.pdf
+Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C12.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C12.pdf
+Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C13.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C13.pdf
+Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C14.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C14.pdf
+Census2011,Rajshahi,ChapaiNawabganj,Chapai Nawabganj_C15.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/ChapaiNawabganj/Chapai Nawabganj_C15.pdf
 Census2011,Rajshahi,Bogra,Bogra_C01.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/Bogra/Bogra_C01.pdf
 Census2011,Rajshahi,Bogra,Bogra_C02.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/Bogra/Bogra_C02.pdf
 Census2011,Rajshahi,Bogra,Bogra_C03.pdf,http://203.112.218.65:8008/Census2011/Rajshahi/Bogra/Bogra_C03.pdf
