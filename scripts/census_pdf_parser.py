@@ -125,7 +125,7 @@ class CensusPdfParser(object):
 
         self.parsed_df = pd.DataFrame(row_arr)
 
-        print("DONE! ", self.district, self.num_pages, self.parsed_df.shape, "\n", self.parsed_df.head())
+        print("DONE! ", self.district, self.table_id, self.num_pages, self.parsed_df.shape, "\n", self.parsed_df.head())
 
         out_filepath = CSV_SAVE_DIR + "/%s.csv" % self.filename if out_filepath is None else out_filepath
         self.parsed_df.to_csv(out_filepath, index=0)
