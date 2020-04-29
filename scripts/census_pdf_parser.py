@@ -27,7 +27,7 @@ TABLE_OFFICIAL_NUM_COLS = {
 
 }
 
-DEBUG = 1
+DEBUG = 0
 
 
 class CensusPdfParser(object):
@@ -174,16 +174,16 @@ def run_parallel(args):
     
 
 if __name__ == '__main__':
-    run_parallel(["Comilla", 12])
+    # run_parallel(["Bandarban", 1])
     # parser = CensusPdfParser('Bhola', table_id=1)
     # parser.run()
-    # df = pd.read_csv(META_SAVE_DIR + "/census_urls_cleaned.csv")
-    # arg_array = []
-    # for d in set(df.district.values):
-    #     for i in range(1, 16):
-    #         arg_array.append([d, i])
+    df = pd.read_csv(META_SAVE_DIR + "/census_urls_cleaned.csv")
+    arg_array = []
+    for d in set(df.district.values):
+        for i in range(1, 16):
+            arg_array.append([d, i])
 
-    # parallel_worker = Parallel(n_jobs=MAX_CPUS, backend='multiprocessing', verbose=50)
-    # parallel_worker(delayed(run_parallel)(arg) for arg in arg_array)
+    parallel_worker = Parallel(n_jobs=MAX_CPUS, backend='multiprocessing', verbose=50)
+    parallel_worker(delayed(run_parallel)(arg) for arg in arg_array)
 
         
