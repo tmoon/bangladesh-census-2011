@@ -26,7 +26,6 @@ TABLE_OFFICIAL_NUM_COLS = {
     15: 10
 
 }
-CSV_SAVE_DIR = "../census_parsed_csvs"
 
 DEBUG = 0
 
@@ -38,8 +37,9 @@ class CensusPdfParser(object):
         self.district = district
         self.table_id = table_id
         self.filename = "%s_C%.2d" % (self.district, self.table_id)
-        if filepath is None:
-            self.filepath = PDF_SAVE_DIR + "/%s.pdf" % self.filename
+        
+        self.filepath = PDF_SAVE_DIR + "/%s.pdf" % self.filename if filepath is None else filepath
+
         self.num_pages = 0
         self.table_idx_arr = []
 
@@ -57,12 +57,21 @@ class CensusPdfParser(object):
         last_row_id = -1
         for id, row in tmp_table.df.iterrows():
             numeric_rows = re.findall(r'\d', "".join(row))
-            if "".join(numeric_rows) == "".join([str(i) for i in range(1, TABLE_OFFICIAL_NUM_COLS[self.table_id] + 1)]):
-                print("last header row", id)
+            # hardcoded check 1-6 in row
+            if "".join([str(i) for i in range(1, 7)]) in "".join(numeric_rows):
+                # print("last header row", id)
                 last_row_id = id
                 break
+        if last_row_id == -1:
+            print("FAILED to find last header col!!!", self.filename)
+            assert(last_row_id != -1)
+        # if last_row_id == -1:
+        #     print(tmp_table.page)
+        #     print(tmp_table.df)
+        #     for id, row in tmp_table.df.iterrows():
+        #         numeric_rows = re.findall(r'\d', "".join(row))
+        #         print(numeric_rows)
 
-        assert(last_row_id != -1)
 
         return last_row_id
 
@@ -87,8 +96,8 @@ class CensusPdfParser(object):
 
     def read_tables(self):
         self.tables = None
-        if DEBUG:
-            self.num_pages = 2
+        # if DEBUG:
+        #     self.num_pages = 2
         try:
             self.tables = camelot.read_pdf(self.filepath, flavor='stream', pages='1-%d' % self.num_pages,
                          columns=[self.column_boundary for i in range(self.num_pages)])
@@ -159,13 +168,15 @@ def run_parallel(args):
     except Exception as e:
         with open(META_SAVE_DIR +  "/%s_C%.2d.error" % (district, table_id), 'w') as f:
             f.write("%s FAILED: %s" % (str(datetime.datetime.now()), e))
-        print("FAILED", e)
+        print("FAILED", args, e)
+        raise e
     
 
 if __name__ == '__main__':
-    # parser = CensusPdfParser('Dhaka', '/Users/tarik/misc/bangladesh-census-2011/census_pdf_dump/Dhaka_C04.pdf', table_id=4)
+    # run_parallel(["Bandarban", 1])
+    # parser = CensusPdfParser('Bhola', table_id=1)
     # parser.run()
-    df = pd.read_csv(META_SAVE_DIR + "/census_urls.csv")
+    df = pd.read_csv(META_SAVE_DIR + "/census_urls_cleaned.csv")
     arg_array = []
     for d in set(df.district.values):
         for i in range(1, 16):
