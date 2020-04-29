@@ -27,7 +27,7 @@ TABLE_OFFICIAL_NUM_COLS = {
 
 }
 
-DEBUG = 0
+DEBUG = 1
 
 
 class CensusPdfParser(object):
@@ -58,7 +58,9 @@ class CensusPdfParser(object):
         for id, row in tmp_table.df.iterrows():
             numeric_rows = re.findall(r'\d', "".join(row))
             # hardcoded check 1-6 in row
-            if "".join([str(i) for i in range(1, 7)]) in "".join(numeric_rows):
+            numeric_last_val = 11 if self.table_id == 3 else 7
+            check_str = "".join([str(i) for i in range(1, numeric_last_val + 1)])
+            if check_str in "".join(numeric_rows):
                 # print("last header row", id)
                 last_row_id = id
                 break
@@ -169,20 +171,19 @@ def run_parallel(args):
         with open(META_SAVE_DIR +  "/%s_C%.2d.error" % (district, table_id), 'w') as f:
             f.write("%s FAILED: %s" % (str(datetime.datetime.now()), e))
         print("FAILED", args, e)
-        raise e
     
 
 if __name__ == '__main__':
-    # run_parallel(["Bandarban", 1])
+    run_parallel(["Comilla", 12])
     # parser = CensusPdfParser('Bhola', table_id=1)
     # parser.run()
-    df = pd.read_csv(META_SAVE_DIR + "/census_urls_cleaned.csv")
-    arg_array = []
-    for d in set(df.district.values):
-        for i in range(1, 16):
-            arg_array.append([d, i])
+    # df = pd.read_csv(META_SAVE_DIR + "/census_urls_cleaned.csv")
+    # arg_array = []
+    # for d in set(df.district.values):
+    #     for i in range(1, 16):
+    #         arg_array.append([d, i])
 
-    parallel_worker = Parallel(n_jobs=MAX_CPUS, backend='multiprocessing', verbose=50)
-    parallel_worker(delayed(run_parallel)(arg) for arg in arg_array)
+    # parallel_worker = Parallel(n_jobs=MAX_CPUS, backend='multiprocessing', verbose=50)
+    # parallel_worker(delayed(run_parallel)(arg) for arg in arg_array)
 
         
