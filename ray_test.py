@@ -6,22 +6,27 @@ import time
 import os
 
 print("PID", os.getpid())
-ray.init()
-        
-@ray.remote
+
+RAY = False
+
+
 class District(object):
     """docstring for District"""
     def __init__(self, id):
         self.id = id
         self.persons_dict = {}
     
-    def register_person(self, person):
-        self.persons_dict[person.uid] = person
+    def register_persons(self, persons):
+        for person in persons:
+            self.persons_dict[person.uid] = person
     
 
     def num_members(self):
         return len(self.persons_dict)
 
+if RAY:
+    ray.init()
+    District = ray.remote(District)
 
 class Person(object):
     """docstring for Person"""
@@ -30,23 +35,34 @@ class Person(object):
         self.features = np.random.rand(100) if features is None else features
         
 if __name__ == '__main__':
-    p_arr = []
     M = 1000000
 
     NUM_DIST = 4
+    p_dict = {i: [] for i in range(NUM_DIST)}
 
-    dists = [District.remote(i) for i in range(NUM_DIST)]
+    if RAY:
+        dists = [District.remote(i) for i in range(NUM_DIST)]
+    else:
+        dists = [District(i) for i in range(NUM_DIST)]
 
     for i in range(M):
         p = Person(i)
+        p_dict[i % NUM_DIST].append(p)
 
-        dists[i % NUM_DIST].register_person.remote(p)
+    t = time.time()
+    for id in range(NUM_DIST):
+        dist = dists[id]
+        if RAY:
+            dist.register_persons.remote(p_dict.get(id))
+        else:
+            dist.register_persons(p_dict.get(id))
 
-        if i % M == 1:
-            print(i, " ")
+    if RAY:
+        results = ray.get([d.num_members.remote() for d in dists])
+    else:
+        results = [d.num_members() for d in dists]
 
-    results = ray.get([d.num_members.remote() for d in dists])
-
+    print(time.time() - t)
 
     print(results)
     print("DONE")
