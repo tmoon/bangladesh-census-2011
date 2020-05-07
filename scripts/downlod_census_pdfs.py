@@ -35,3 +35,13 @@ if __name__ == '__main__':
     # print(urls
     parallel_worker = Parallel(n_jobs=MAX_THREADS, backend='threading', verbose=50)
     parallel_worker(delayed(download_file)(url) for url in urls)
+
+from joblib import Parallel, delayed
+
+def parallel_fn(arg):
+    # do something 
+
+    return obj
+
+parallel_worker = Parallel(n_jobs=MAX_CPUS, backend='multiprocessing', verbose=50)
+parallel_worker(delayed(run_parallel)(arg) for arg in arg_array)

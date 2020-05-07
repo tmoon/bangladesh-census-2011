@@ -67,12 +67,12 @@ class CensusPdfParser(object):
         if last_row_id == -1:
             print("FAILED to find last header col!!!", self.filename)
             assert(last_row_id != -1)
-        # if last_row_id == -1:
-        #     print(tmp_table.page)
-        #     print(tmp_table.df)
-        #     for id, row in tmp_table.df.iterrows():
-        #         numeric_rows = re.findall(r'\d', "".join(row))
-        #         print(numeric_rows)
+        if last_row_id == -1:
+            print(tmp_table.page)
+            print(tmp_table.df)
+            for id, row in tmp_table.df.iterrows():
+                numeric_rows = re.findall(r'\d', "".join(row))
+                print(numeric_rows)
 
 
         return last_row_id

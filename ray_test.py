@@ -7,7 +7,7 @@ import os
 
 print("PID", os.getpid())
 
-RAY = False
+RAY = True
 
 
 class District(object):
@@ -19,6 +19,7 @@ class District(object):
     def register_persons(self, persons):
         for person in persons:
             self.persons_dict[person.uid] = person
+        time.sleep(10)
     
 
     def num_members(self):
@@ -28,6 +29,7 @@ if RAY:
     ray.init()
     District = ray.remote(District)
 
+print(ray.get_gpu_ids())
 class Person(object):
     """docstring for Person"""
     def __init__(self, uid, features = None):
@@ -35,13 +37,13 @@ class Person(object):
         self.features = np.random.rand(100) if features is None else features
         
 if __name__ == '__main__':
-    M = 1000000
+    M = 10000
 
     NUM_DIST = 4
     p_dict = {i: [] for i in range(NUM_DIST)}
 
     if RAY:
-        dists = [District.remote(i) for i in range(NUM_DIST)]
+        dists = [District.options(resources={"Custom1": i}).remote(i) for i in range(NUM_DIST)]
     else:
         dists = [District(i) for i in range(NUM_DIST)]
 
